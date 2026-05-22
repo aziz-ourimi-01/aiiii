@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My First HTML Page</title>
+</head>
+<body>
+<script>
+let n = Number(prompt("Enter a positive number:"));
+if (n <= 0 || isNaN(n)) {
+alert("Please enter a valid positive number!");
+} else {
+for (let i = 1; i <= n; i++) {
+let result;
+    if (i % 3 === 0 && i % 5 === 0) {
+        result = "FizzBuzz";
+    } else if (i % 3 === 0) {
+        result = "Fizz";
+    } else if (i % 5 === 0) {
+        result = "Buzz";
+    } else {
+        result = i;
+    }
+    alert(result);
+    }
+}
+</script>
+<h1>Welcome to My Website</h1>
+<p>This is a paragraph.</p>
+<a href="https://example.com">Visit Example</a>
+</body>
+</html>

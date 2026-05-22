@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var isBot = confirm("Are you a bot? (OK = Bot, Cancel = Person)");
+if (isBot) {
+  alert("Hello Bot!");
+} else {
+  var name = prompt("What is your name?");
+  if (name && name.trim() !== "") {
+    alert("Hello " + name + "!");
+  } else {
+    alert("You didn't enter a name.");
+  }
+}
+</script>
+</body>
+</html>

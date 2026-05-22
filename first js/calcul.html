@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Calculator</title>
+</head>
+<body>
+
+<h1>JavaScript Prompt Calculator</h1>
+
+<script>
+    let num1 = Number(prompt("Enter first number:"));
+    let num2 = Number(prompt("Enter second number:"));
+
+    let operation = prompt(
+        "Choose an operation (+, -, *, /):"
+    );
+
+    let result;
+
+    if (operation === "+") {
+        result = num1 + num2;
+    } else if (operation === "-") {
+        result = num1 - num2;
+    } else if (operation === "*") {
+        result = num1 * num2;
+    } else if (operation === "/") {
+        result = num1 / num2;
+    } else {
+        alert("Invalid operation selected!");
+    }
+
+    if (result !== undefined) {
+        alert(`Result: ${num1} ${operation} ${num2} = ${result}`);
+    }
+</script>
+
+</body>
+</html>

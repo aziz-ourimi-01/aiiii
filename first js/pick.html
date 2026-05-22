@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guess the Number Game</title>
+</head>
+<body>
+<h2>Guess a number between 1 and 100</h2>
+<input type="number" id="guess" placeholder="Your guess here">
+<button onclick="checkGuess()">Check</button>
+<p id="result"></p>
+<script>
+let secretNumber=Math.floor(Math.random()*100)+1;
+let tries=0;
+let maxtries=10;
+let maxLies=3;
+let liesUsed=0;
+
+function checkGuess(){
+        let userGuess=document.getElementById("guess").value;
+        userGuess=Number(userGuess);
+tries++;
+if(tries>maxtries){
+        document.getElementById("result").textContent=
+        "Game over! The number was "+secretNumber;
+return;
+}
+let distance=Math.abs(userGuess-secretNumber);
+let hint=(distance<=10)?"Close!":"Far away!";
+if(liesUsed<maxLies){
+        let shouldLie=Math.random()<0.5;
+        if(shouldLie){
+        hint=(hint==="Close!")?"Far away!":"Close!";
+liesUsed++;
+}
+}
+if(userGuess===secretNumber){
+        document.getElementById("result").textContent="Correct! You guessed it in "+tries+"/"+maxtries;
+        }else if(userGuess<secretNumber){
+        document.getElementById("result").textContent="Too low. "+hint+" | "+tries+"/"+maxtries;
+        }else{
+        document.getElementById("result").textContent="Too high. "+hint+" | "+tries+"/"+maxtries;
+}
+}
+</script>
+</body>
+</html>
